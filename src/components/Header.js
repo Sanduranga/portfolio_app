@@ -30,14 +30,9 @@ const socials = [
     icon: faStackOverflow,
     url: "https://stackoverflow.com",
   },
-  
 ];
 
-
-
 const Header = () => {
-
-
   const handleClick = (anchor) => () => {
     const id = `${anchor}-section`;
     const element = document.getElementById(id);
@@ -57,7 +52,7 @@ const Header = () => {
       right={0}
       translateY={0}
       transitionProperty="transform"
-      transitionDuration=".3s"
+      transitionDuration=".8s"
       transitionTimingFunction="ease-in-out"
       backgroundColor="#18181b"
     >
@@ -71,27 +66,19 @@ const Header = () => {
           <nav>
             <HStack spacing={4}>
               {socials.map((social, index) => (
-              <Link
-                key={index}
-                href={social.url}
-                target="_blank"
-                
-              >
-                <FontAwesomeIcon icon={social.icon} />
-              </Link> ))}
-              </HStack>
+                <Link key={index} href={social.url} target="_blank">
+                  <FontAwesomeIcon icon={social.icon} />
+                </Link>
+              ))}
+            </HStack>
           </nav>
           <nav>
             <HStack spacing={8}>
-              <Link
-                href="/#projects"
-                onClick={handleClick('projects')}>
-                   {"Projects"}
+              <Link href="/#projects" onClick={handleClick("projects")}>
+                {"Projects"}
               </Link>
-              <Link
-                href="/#contact-me"
-                onClick={handleClick('contactme')}>
-                   {"Contact me"}
+              <Link href="/#contact-me" onClick={handleClick("contactme")}>
+                {"Contact me"}
               </Link>
             </HStack>
           </nav>
